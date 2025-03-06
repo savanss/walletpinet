@@ -1,6 +1,6 @@
 package com.example.mywebapp.controller; // update package if needed
 
-import com.example.mywebapp.model.User;
+import com.example.mywebapp.model.Users;
 import com.example.mywebapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,17 +15,17 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public List<User> getAllUsers() {
+    public List<Users> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
+    public Users getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public Users createUser(@RequestBody Users user) {
         return userService.saveUser(user);
     }
 

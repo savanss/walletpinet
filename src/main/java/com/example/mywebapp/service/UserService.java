@@ -1,6 +1,6 @@
 package com.example.mywebapp.service; // update package if needed
 
-import com.example.mywebapp.model.User;
+import com.example.mywebapp.model.Users;
 import com.example.mywebapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,15 +12,15 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<User> getAllUsers() {
+    public List<Users> getAllUsers() {
         return userRepository.findAll();
     }
 
-    public User getUserById(Long id) {
+    public Users getUserById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
 
-    public User saveUser(User user) {
+    public Users saveUser(Users user) {
         return userRepository.save(user);
     }
 

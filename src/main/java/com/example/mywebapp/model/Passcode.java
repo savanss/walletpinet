@@ -1,35 +1,33 @@
 package com.example.mywebapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "passcode")   // Map to the table explicitly
 public class Passcode {
 
-	
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")   // Maps to column `id`
     private Integer id;
-	
-	private String pass;
 
-	public Integer getId() {
-		return id;
-	}
+    @Column(name = "pass", columnDefinition = "TEXT")   // Maps to column `pass` as TEXT
+    private String pass;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    // Getters and Setters
+    public Integer getId() {
+        return id;
+    }
 
-	public String getPass() {
-		return pass;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
-	
-	
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
 }
